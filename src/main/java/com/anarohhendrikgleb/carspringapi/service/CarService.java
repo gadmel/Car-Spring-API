@@ -10,14 +10,14 @@ import java.util.UUID;
 
 @Service
 public class CarService {
-	CarRepository carRepository = new CarRepository();
+	CarRepository carRepository=new CarRepository();
 
 	public Car addCar(Car newCar) {
 		String randomId = UUID.randomUUID().toString();
 		newCar.setId(randomId);
 		System.out.println("The Car Service has saved a new car with ID " + newCar.getId() + ".");
-		Car updatedCar = CarRepository.addCar(newCar);
-		return carRepository.addCar(updatedCar);
+		Car updatedCar = carRepository.addCar(newCar);
+		return updatedCar;
 	}
 
 	public List<Car> getCars() {
